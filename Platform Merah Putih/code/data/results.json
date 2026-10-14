@@ -1,0 +1,236 @@
+[
+  {
+    "sessionId": "16d33d0ae0f0",
+    "studentId": "2024003",
+    "studentName": "Budi Santoso",
+    "class": "10B",
+    "examId": "MAT-001",
+    "examTitle": "Ujian Matematika Dasar",
+    "startedAt": "2026-10-13T04:58:28.075Z",
+    "submittedAt": "2026-10-14T07:08:44.824Z",
+    "durationSeconds": 94216,
+    "endReason": "forced",
+    "correct": 0,
+    "wrong": 0,
+    "empty": 6,
+    "essayCount": 1,
+    "percent": 0,
+    "total": 6,
+    "violations": [
+      {
+        "type": "devtools_open",
+        "message": "Developer Tools terbuka",
+        "timestamp": "2026-10-13T04:58:30.558Z"
+      }
+    ],
+    "clipboardAttempts": 0,
+    "grading": null,
+    "finalScore": null,
+    "details": [
+      {
+        "qid": 3,
+        "type": "essay",
+        "questionText": "Jelaskan langkah-langkah menghitung luas segitiga dengan alas 10 cm dan tinggi 8 cm!",
+        "answer": "",
+        "wordCount": 0,
+        "keywords": [
+          "alas",
+          "tinggi",
+          "1/2",
+          "kali",
+          "80",
+          "40"
+        ],
+        "keywordsFound": [],
+        "sampleAnswer": "Luas segitiga = 1/2 × alas × tinggi = 1/2 × 10 × 8 = 40 cm²",
+        "maxWords": 100,
+        "minWords": null,
+        "needsGrading": true
+      },
+      {
+        "qid": 0,
+        "type": "multiple_choice",
+        "questionText": "Berapakah hasil dari 25 × 16?",
+        "answer": null,
+        "answerText": "",
+        "correctAnswer": "b",
+        "correctText": "400",
+        "isCorrect": null
+      },
+      {
+        "qid": 5,
+        "type": "multiple_choice",
+        "questionText": "Hasil dari 15% dari 240 adalah...",
+        "answer": null,
+        "answerText": "",
+        "correctAnswer": "b",
+        "correctText": "36",
+        "isCorrect": null
+      },
+      {
+        "qid": 4,
+        "type": "multiple_choice",
+        "questionText": "Bilangan prima antara 20 dan 30 adalah...",
+        "answer": null,
+        "answerText": "",
+        "correctAnswer": "b",
+        "correctText": "23, 29",
+        "isCorrect": null
+      },
+      {
+        "qid": 1,
+        "type": "multiple_choice",
+        "questionText": "Jika x + 3x = 20, maka nilai x adalah...",
+        "answer": null,
+        "answerText": "",
+        "correctAnswer": "b",
+        "correctText": "5",
+        "isCorrect": null
+      },
+      {
+        "qid": 2,
+        "type": "multiple_choice",
+        "questionText": "Luas persegi dengan sisi 12 cm adalah...",
+        "answer": null,
+        "answerText": "",
+        "correctAnswer": "b",
+        "correctText": "144 cm²",
+        "isCorrect": null
+      }
+    ]
+  },
+  {
+    "sessionId": "c8728ea72e95",
+    "studentId": "2024001",
+    "studentName": "Ahmad Rizki",
+    "class": "10A",
+    "examId": "IPA-001",
+    "examTitle": "Ilmu Pengetahuan Alam",
+    "startedAt": "2026-10-14T07:09:29.156Z",
+    "submittedAt": "2026-10-14T07:09:43.189Z",
+    "durationSeconds": 14,
+    "endReason": "submitted",
+    "correct": 0,
+    "wrong": 3,
+    "empty": 0,
+    "essayCount": 0,
+    "percent": 0,
+    "total": 3,
+    "violations": [],
+    "clipboardAttempts": 0,
+    "grading": null,
+    "finalScore": 0,
+    "details": [
+      {
+        "qid": 2,
+        "type": "multiple_choice",
+        "questionText": "Gaya yang menarik benda ke tengah bumi disebut...",
+        "answer": "a",
+        "answerText": "Gaya gesek",
+        "correctAnswer": "b",
+        "correctText": "Gaya gravitasi",
+        "isCorrect": false
+      },
+      {
+        "qid": 1,
+        "type": "multiple_choice",
+        "questionText": "Proses fotosintesis terjadi pada...",
+        "answer": "d",
+        "answerText": "bunga",
+        "correctAnswer": "c",
+        "correctText": "daun",
+        "isCorrect": false
+      },
+      {
+        "qid": 0,
+        "type": "multiple_choice",
+        "questionText": "Planet terdekat dari Matahari adalah...",
+        "answer": "d",
+        "answerText": "Mars",
+        "correctAnswer": "b",
+        "correctText": "Merkurius",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "sessionId": "adc4c9d2987a",
+    "studentId": "2024003",
+    "studentName": "Budi Santoso",
+    "class": "10B",
+    "examId": "BIN-001",
+    "examTitle": "Ujian Bahasa Indonesia",
+    "startedAt": "2026-10-14T07:10:13.201Z",
+    "submittedAt": "2026-10-14T07:10:35.719Z",
+    "durationSeconds": 22,
+    "endReason": "submitted",
+    "correct": 0,
+    "wrong": 3,
+    "empty": 0,
+    "essayCount": 1,
+    "percent": 0,
+    "total": 4,
+    "violations": [],
+    "clipboardAttempts": 1,
+    "grading": null,
+    "finalScore": null,
+    "details": [
+      {
+        "qid": 2,
+        "type": "multiple_choice",
+        "questionText": "Kalimat yang mengandung majas personifikasi adalah...",
+        "answer": "d",
+        "answerText": "Buku itu milikku.",
+        "correctAnswer": "a",
+        "correctText": "Matahari tersenyum pagi ini.",
+        "isCorrect": false
+      },
+      {
+        "qid": 0,
+        "type": "multiple_choice",
+        "questionText": "Manakah kalimat yang menggunakan ejaan yang tepat?",
+        "answer": "b",
+        "answerText": "Dia pergi ke pasar kemaren.",
+        "correctAnswer": "a",
+        "correctText": "Dia pergi ke pasar kemarin.",
+        "isCorrect": false
+      },
+      {
+        "qid": 3,
+        "type": "essay",
+        "questionText": "Buatlah satu paragraf deskriptif tentang \"Keindahan Pantai di Matahari Terbenam\" minimal 50 kata!",
+        "answer": "ak ada adad",
+        "wordCount": 3,
+        "keywords": [
+          "pantai",
+          "matahari",
+          "terbenam",
+          "indah",
+          "laut",
+          "ombak",
+          "pasir",
+          "langit",
+          "warna",
+          "merah",
+          "kuning",
+          "tenang"
+        ],
+        "keywordsFound": [],
+        "sampleAnswer": "Pantai di saat matahari terbenam mempesona. Langit berwarna merah muda dan kuning keemasan menyinari laut yang tenang. Ombak kecil mengendus pasir putih dengan lembut. Angin malam membawa aroma garam yang menyegarkan. Suasana begitu damai dan romantis, sempurna untuk menenangkan pikiran.",
+        "maxWords": 150,
+        "minWords": 50,
+        "needsGrading": true
+      },
+      {
+        "qid": 1,
+        "type": "multiple_choice",
+        "questionText": "Antonim dari kata \"murah\" adalah...",
+        "answer": "d",
+        "answerText": "jelek",
+        "correctAnswer": "a",
+        "correctText": "mahal",
+        "isCorrect": false
+      }
+    ]
+  }
+]

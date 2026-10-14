@@ -1,0 +1,81 @@
+[
+  {
+    "timestamp": "2026-10-13T04:58:04.108Z",
+    "event": "ADMIN_LOGIN"
+  },
+  {
+    "timestamp": "2026-10-13T04:58:28.075Z",
+    "event": "EXAM_START",
+    "studentId": "2024003",
+    "studentName": "Budi Santoso",
+    "examId": "MAT-001"
+  },
+  {
+    "timestamp": "2026-10-13T04:58:30.559Z",
+    "event": "VIOLATION_LOCK",
+    "studentId": "2024003",
+    "studentName": "Budi Santoso",
+    "type": "devtools_open",
+    "message": "Developer Tools terbuka"
+  },
+  {
+    "timestamp": "2026-10-14T07:08:21.544Z",
+    "event": "ADMIN_LOGIN"
+  },
+  {
+    "timestamp": "2026-10-14T07:08:44.830Z",
+    "event": "EXAM_FINISH",
+    "studentId": "2024003",
+    "studentName": "Budi Santoso",
+    "examId": "MAT-001",
+    "reason": "forced",
+    "percent": 0
+  },
+  {
+    "timestamp": "2026-10-14T07:08:44.833Z",
+    "event": "FORCE_SUBMIT",
+    "studentId": "2024003",
+    "studentName": "Budi Santoso",
+    "by": "admin"
+  },
+  {
+    "timestamp": "2026-10-14T07:09:29.156Z",
+    "event": "EXAM_START",
+    "studentId": "2024001",
+    "studentName": "Ahmad Rizki",
+    "examId": "IPA-001"
+  },
+  {
+    "timestamp": "2026-10-14T07:09:43.190Z",
+    "event": "EXAM_FINISH",
+    "studentId": "2024001",
+    "studentName": "Ahmad Rizki",
+    "examId": "IPA-001",
+    "reason": "submitted",
+    "percent": 0
+  },
+  {
+    "timestamp": "2026-10-14T07:10:13.201Z",
+    "event": "EXAM_START",
+    "studentId": "2024003",
+    "studentName": "Budi Santoso",
+    "examId": "BIN-001"
+  },
+  {
+    "timestamp": "2026-10-14T07:10:22.503Z",
+    "event": "COPY_PASTE_BLOCKED",
+    "studentId": "2024003",
+    "studentName": "Budi Santoso",
+    "type": "shortcut_v",
+    "message": "Percobaan copy/paste diblokir (ke-1)"
+  },
+  {
+    "timestamp": "2026-10-14T07:10:35.722Z",
+    "event": "EXAM_FINISH",
+    "studentId": "2024003",
+    "studentName": "Budi Santoso",
+    "examId": "BIN-001",
+    "reason": "submitted",
+    "percent": 0
+  }
+]

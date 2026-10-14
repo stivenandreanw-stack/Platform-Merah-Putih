@@ -1,0 +1,19 @@
+{
+  "name": "quiz-aman",
+  "version": "1.0.0",
+  "description": "Sistem Ujian Online dengan Keamanan Ketat (Fullscreen, Anti-Cheat, OTP dari Pengawas)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "quiz",
+    "exam",
+    "security",
+    "otp",
+    "fullscreen"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,192 @@
+{
+  "16d33d0ae0f0": {
+    "id": "16d33d0ae0f0",
+    "token": "66c5e0647369dace2164f477e051aa46710806e32978e8ac",
+    "studentId": "2024003",
+    "examId": "MAT-001",
+    "startedAt": 1791867508075,
+    "status": "finished",
+    "answers": {},
+    "qOrder": [
+      3,
+      0,
+      5,
+      4,
+      1,
+      2
+    ],
+    "optionOrders": {
+      "0": [
+        "b",
+        "a",
+        "d",
+        "c"
+      ],
+      "1": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ],
+      "2": [
+        "d",
+        "b",
+        "c",
+        "a"
+      ],
+      "4": [
+        "b",
+        "c",
+        "d",
+        "a"
+      ],
+      "5": [
+        "c",
+        "a",
+        "b",
+        "d"
+      ]
+    },
+    "violations": [
+      {
+        "type": "devtools_open",
+        "message": "Developer Tools terbuka",
+        "timestamp": "2026-10-13T04:58:30.558Z"
+      }
+    ],
+    "otp": null,
+    "lockReason": "Developer Tools terbuka",
+    "lockedAt": 1791867510558,
+    "clipboardAttempts": 0,
+    "lastSeen": 1791867520088,
+    "finishedAt": 1791961724824,
+    "summary": {
+      "correct": 0,
+      "wrong": 0,
+      "empty": 6,
+      "essayCount": 1,
+      "percent": 0,
+      "total": 6,
+      "endReason": "forced",
+      "violations": [
+        {
+          "type": "devtools_open",
+          "message": "Developer Tools terbuka",
+          "timestamp": "2026-10-13T04:58:30.558Z"
+        }
+      ]
+    }
+  },
+  "c8728ea72e95": {
+    "id": "c8728ea72e95",
+    "token": "6a949cd78e2af18475d843f5ca874e0c3ef8b96c65f3c256",
+    "studentId": "2024001",
+    "examId": "IPA-001",
+    "startedAt": 1791961769156,
+    "status": "finished",
+    "answers": {
+      "0": "d",
+      "1": "d",
+      "2": "a"
+    },
+    "qOrder": [
+      2,
+      1,
+      0
+    ],
+    "optionOrders": {
+      "0": [
+        "c",
+        "a",
+        "d",
+        "b"
+      ],
+      "1": [
+        "c",
+        "a",
+        "d",
+        "b"
+      ],
+      "2": [
+        "a",
+        "d",
+        "c",
+        "b"
+      ]
+    },
+    "violations": [],
+    "otp": null,
+    "lockReason": null,
+    "lockedAt": null,
+    "clipboardAttempts": 0,
+    "lastSeen": 1791961783189,
+    "finishedAt": 1791961783189,
+    "summary": {
+      "correct": 0,
+      "wrong": 3,
+      "empty": 0,
+      "essayCount": 0,
+      "percent": 0,
+      "total": 3,
+      "endReason": "submitted",
+      "violations": []
+    }
+  },
+  "adc4c9d2987a": {
+    "id": "adc4c9d2987a",
+    "token": "a8b91d21c5737ad63d3c62f94e8a728fd60b5dc771d284eb",
+    "studentId": "2024003",
+    "examId": "BIN-001",
+    "startedAt": 1791961813201,
+    "status": "finished",
+    "answers": {
+      "0": "b",
+      "1": "d",
+      "2": "d",
+      "3": "ak ada adad"
+    },
+    "qOrder": [
+      2,
+      0,
+      3,
+      1
+    ],
+    "optionOrders": {
+      "0": [
+        "c",
+        "d",
+        "a",
+        "b"
+      ],
+      "1": [
+        "c",
+        "a",
+        "b",
+        "d"
+      ],
+      "2": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    "violations": [],
+    "otp": null,
+    "lockReason": null,
+    "lockedAt": null,
+    "clipboardAttempts": 1,
+    "lastSeen": 1791961835718,
+    "finishedAt": 1791961835719,
+    "summary": {
+      "correct": 0,
+      "wrong": 3,
+      "empty": 0,
+      "essayCount": 1,
+      "percent": 0,
+      "total": 4,
+      "endReason": "submitted",
+      "violations": []
+    }
+  }
+}

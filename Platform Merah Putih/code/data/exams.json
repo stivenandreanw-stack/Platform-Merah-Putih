@@ -1,0 +1,314 @@
+{
+  "MAT-001": {
+    "id": "MAT-001",
+    "title": "Ujian Matematika Dasar",
+    "durationMinutes": 30,
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+    "questions": [
+      {
+        "text": "Berapakah hasil dari 25 × 16?",
+        "type": "multiple_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "375"
+          },
+          {
+            "id": "b",
+            "text": "400"
+          },
+          {
+            "id": "c",
+            "text": "425"
+          },
+          {
+            "id": "d",
+            "text": "450"
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "text": "Jika x + 3x = 20, maka nilai x adalah...",
+        "type": "multiple_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "4"
+          },
+          {
+            "id": "b",
+            "text": "5"
+          },
+          {
+            "id": "c",
+            "text": "6"
+          },
+          {
+            "id": "d",
+            "text": "7"
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "text": "Luas persegi dengan sisi 12 cm adalah...",
+        "type": "multiple_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "124 cm²"
+          },
+          {
+            "id": "b",
+            "text": "144 cm²"
+          },
+          {
+            "id": "c",
+            "text": "164 cm²"
+          },
+          {
+            "id": "d",
+            "text": "184 cm²"
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "text": "Jelaskan langkah-langkah menghitung luas segitiga dengan alas 10 cm dan tinggi 8 cm!",
+        "type": "essay",
+        "maxWords": 100,
+        "keywords": [
+          "alas",
+          "tinggi",
+          "1/2",
+          "kali",
+          "80",
+          "40"
+        ],
+        "sampleAnswer": "Luas segitiga = 1/2 × alas × tinggi = 1/2 × 10 × 8 = 40 cm²"
+      },
+      {
+        "text": "Bilangan prima antara 20 dan 30 adalah...",
+        "type": "multiple_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "21, 23, 27"
+          },
+          {
+            "id": "b",
+            "text": "23, 29"
+          },
+          {
+            "id": "c",
+            "text": "21, 27, 29"
+          },
+          {
+            "id": "d",
+            "text": "23, 27, 29"
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "text": "Hasil dari 15% dari 240 adalah...",
+        "type": "multiple_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "30"
+          },
+          {
+            "id": "b",
+            "text": "36"
+          },
+          {
+            "id": "c",
+            "text": "40"
+          },
+          {
+            "id": "d",
+            "text": "45"
+          }
+        ],
+        "correctAnswer": "b"
+      }
+    ]
+  },
+  "BIN-001": {
+    "id": "BIN-001",
+    "title": "Ujian Bahasa Indonesia",
+    "durationMinutes": 45,
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+    "questions": [
+      {
+        "text": "Manakah kalimat yang menggunakan ejaan yang tepat?",
+        "type": "multiple_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "Dia pergi ke pasar kemarin."
+          },
+          {
+            "id": "b",
+            "text": "Dia pergi ke pasar kemaren."
+          },
+          {
+            "id": "c",
+            "text": "dia pergi ke pasar kemarin."
+          },
+          {
+            "id": "d",
+            "text": "Dia pergi ke pasar kemarin"
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "text": "Antonim dari kata \"murah\" adalah...",
+        "type": "multiple_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "mahal"
+          },
+          {
+            "id": "b",
+            "text": "biasa"
+          },
+          {
+            "id": "c",
+            "text": "bagus"
+          },
+          {
+            "id": "d",
+            "text": "jelek"
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "text": "Kalimat yang mengandung majas personifikasi adalah...",
+        "type": "multiple_choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "Matahari tersenyum pagi ini."
+          },
+          {
+            "id": "b",
+            "text": "Dia cepat seperti kucing."
+          },
+          {
+            "id": "c",
+            "text": "Rumah itu besar sekali."
+          },
+          {
+            "id": "d",
+            "text": "Buku itu milikku."
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "text": "Buatlah satu paragraf deskriptif tentang \"Keindahan Pantai di Matahari Terbenam\" minimal 50 kata!",
+        "type": "essay",
+        "maxWords": 150,
+        "minWords": 50,
+        "keywords": [
+          "pantai",
+          "matahari",
+          "terbenam",
+          "indah",
+          "laut",
+          "ombak",
+          "pasir",
+          "langit",
+          "warna",
+          "merah",
+          "kuning",
+          "tenang"
+        ],
+        "sampleAnswer": "Pantai di saat matahari terbenam mempesona. Langit berwarna merah muda dan kuning keemasan menyinari laut yang tenang. Ombak kecil mengendus pasir putih dengan lembut. Angin malam membawa aroma garam yang menyegarkan. Suasana begitu damai dan romantis, sempurna untuk menenangkan pikiran."
+      }
+    ]
+  },
+  "IPA-001": {
+    "id": "IPA-001",
+    "title": "Ilmu Pengetahuan Alam",
+    "durationMinutes": 40,
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+    "questions": [
+      {
+        "text": "Planet terdekat dari Matahari adalah...",
+        "options": [
+          {
+            "id": "a",
+            "text": "Venus"
+          },
+          {
+            "id": "b",
+            "text": "Merkurius"
+          },
+          {
+            "id": "c",
+            "text": "Bumi"
+          },
+          {
+            "id": "d",
+            "text": "Mars"
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "text": "Proses fotosintesis terjadi pada...",
+        "options": [
+          {
+            "id": "a",
+            "text": "akar"
+          },
+          {
+            "id": "b",
+            "text": "batang"
+          },
+          {
+            "id": "c",
+            "text": "daun"
+          },
+          {
+            "id": "d",
+            "text": "bunga"
+          }
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "text": "Gaya yang menarik benda ke tengah bumi disebut...",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gaya gesek"
+          },
+          {
+            "id": "b",
+            "text": "Gaya gravitasi"
+          },
+          {
+            "id": "c",
+            "text": "Gaya magnet"
+          },
+          {
+            "id": "d",
+            "text": "Gaya listrik"
+          }
+        ],
+        "correctAnswer": "b"
+      }
+    ]
+  }
+}

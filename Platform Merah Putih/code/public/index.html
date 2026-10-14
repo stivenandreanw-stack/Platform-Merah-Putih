@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Platform Merah Putih</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='3' height='1' fill='%23e70011'/%3E%3Crect y='1' width='3' height='1' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="loading-screen" class="screen active">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <h2>Memuat Sistem Keamanan...</h2>
+      <p id="loading-status">Menginisialisasi...</p>
+    </div>
+  </div>
+
+  <!-- LOGIN: pilih sesi Siswa atau Pengawas -->
+  <div id="login-screen" class="screen">
+    <div class="login-container">
+      <div class="security-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M12 17v-5"></path>
+          <path d="M9 17v-5"></path>
+          <path d="M15 17v-5"></path>
+        </svg>
+        <span>Mode Keamanan Tinggi</span>
+      </div>
+      <h1 class="brand-title"><svg class="brand-flag" viewBox="0 0 3 2" role="img" aria-label="Bendera Indonesia"><rect width="3" height="1" fill="#e70011"/><rect y="1" width="3" height="1" fill="#fff"/></svg><span>Platform Merah Putih</span></h1>
+      <p class="subtitle">Sistem Ujian dengan Pengawasan Ketat</p>
+
+      <div class="role-tabs" role="tablist">
+        <button type="button" class="role-tab active" data-role="student" role="tab">👨‍🎓 Siswa</button>
+        <button type="button" class="role-tab" data-role="admin" role="tab">🛡️ Pengawas</button>
+      </div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="student-id">ID Peserta / NIS</label>
+          <input type="text" id="student-id" name="studentId" required autocomplete="off" placeholder="Masukkan ID Peserta">
+        </div>
+        <div class="form-group">
+          <label for="exam-code">Kode Ujian</label>
+          <input type="text" id="exam-code" name="examCode" required autocomplete="off" placeholder="Masukkan Kode Ujian">
+        </div>
+        <button type="submit" class="btn btn-primary" id="login-btn">
+          <span class="btn-text">Mulai Ujian</span>
+        </button>
+      </form>
+
+      <form id="admin-login-form" class="hidden">
+        <div class="form-group">
+          <label for="admin-password">Password Pengawas</label>
+          <input type="password" id="admin-password" name="password" required autocomplete="current-password" placeholder="Masukkan password pengawas">
+        </div>
+        <button type="submit" class="btn btn-primary" id="admin-login-btn">
+          <span class="btn-text">Masuk Panel Pengawas</span>
+        </button>
+      </form>
+
+      <p id="login-error" class="login-error hidden"></p>
+
+      <div class="security-info" id="student-rules">
+        <h3>⚠️ Aturan Keamanan:</h3>
+        <ul>
+          <li>Ujian berjalan dalam mode <strong>Fullscreen</strong> wajib</li>
+          <li>Tidak boleh keluar dari tab/jendela ujian atau menekan <strong>Esc</strong></li>
+          <li>Tidak boleh membuka aplikasi lain (Alt+Tab, Win+Tab, dll)</li>
+          <li>Melanggar akan <strong>mengunci ujian</strong> dan membuat kode OTP</li>
+          <li>Kode OTP hanya tampil di panel pengawas — minta ke pengawas untuk lanjut</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="fullscreen-prompt" class="screen">
+    <div class="fs-content">
+      <div class="fs-icon">🔒</div>
+      <h1>Wajib Mode Fullscreen</h1>
+      <p id="fs-message">Untuk keamanan ujian, browser harus dalam mode layar penuh.</p>
+      <button id="enter-fs-btn" class="btn btn-primary">Aktifkan Fullscreen</button>
+      <p class="fs-hint">Tekan F11 jika tombol tidak berfungsi</p>
+    </div>
+  </div>
+
+  <div id="quiz-screen" class="screen">
+    <div class="quiz-header">
+      <div class="quiz-info">
+        <span id="exam-title">Loading...</span>
+        <span id="student-name" class="student-badge">Loading...</span>
+      </div>
+      <div class="quiz-timer" id="quiz-timer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 6v6l4 2"></path>
+        </svg>
+        <span id="timer-display">00:00:00</span>
+      </div>
+      <div class="security-indicator" id="security-indicator">
+        <span class="status-dot active"></span>
+        <span>Terlindungi</span>
+      </div>
+    </div>
+
+    <div class="quiz-progress">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span id="progress-text">Soal 1 dari 10</span>
+    </div>
+
+    <div id="question-container" class="question-container">
+      <!-- Questions injected here -->
+    </div>
+
+    <div class="quiz-navigation">
+      <button id="prev-btn" class="btn btn-secondary" disabled>Sebelumnya</button>
+      <div class="question-dots" id="question-dots"></div>
+      <button id="next-btn" class="btn btn-primary">Selanjutnya</button>
+    </div>
+  </div>
+
+  <!-- LAYAR KUNCI: tampil saat siswa melanggar. Kode OTP TIDAK ditampilkan di sini -->
+  <div id="otp-verification-screen" class="screen">
+    <div class="otp-verify-container">
+      <div class="verify-icon">🔒</div>
+      <h1>Ujian Terkunci</h1>
+      <p id="lock-reason">Pelanggaran terdeteksi.</p>
+      <p class="lock-instruction">Minta pengawas untuk membacakan <strong>kode OTP 6 digit</strong> dari panel pengawas, lalu masukkan di bawah.</p>
+
+      <form id="otp-verify-form">
+        <div class="otp-input-group">
+          <input type="text" id="otp-input-1" maxlength="1" inputmode="numeric" pattern="[0-9]" required autocomplete="off" aria-label="Digit 1">
+          <input type="text" id="otp-input-2" maxlength="1" inputmode="numeric" pattern="[0-9]" required autocomplete="off" aria-label="Digit 2">
+          <input type="text" id="otp-input-3" maxlength="1" inputmode="numeric" pattern="[0-9]" required autocomplete="off" aria-label="Digit 3">
+          <input type="text" id="otp-input-4" maxlength="1" inputmode="numeric" pattern="[0-9]" required autocomplete="off" aria-label="Digit 4">
+          <input type="text" id="otp-input-5" maxlength="1" inputmode="numeric" pattern="[0-9]" required autocomplete="off" aria-label="Digit 5">
+          <input type="text" id="otp-input-6" maxlength="1" inputmode="numeric" pattern="[0-9]" required autocomplete="off" aria-label="Digit 6">
+        </div>
+        <button type="submit" class="btn btn-primary" id="verify-btn">Verifikasi &amp; Lanjutkan</button>
+      </form>
+
+      <div id="verify-error" class="verify-error hidden"></div>
+      <div id="verify-info" class="verify-info hidden"></div>
+      <button type="button" id="request-otp-btn" class="btn btn-secondary btn-sm hidden">Minta Kode Baru</button>
+      <p class="verify-hint">Kode OTP berlaku 5 menit, maksimal 3 kali percobaan</p>
+    </div>
+  </div>
+
+  <div id="result-screen" class="screen">
+    <div class="result-container">
+      <div class="result-icon" id="result-icon">✅</div>
+      <h1 id="result-title">Ujian Selesai</h1>
+      <p id="result-message">Terima kasih telah mengikuti ujian</p>
+
+      <div class="score-display">
+        <div class="score-circle" id="score-circle">
+          <span id="score-percent">0%</span>
+        </div>
+        <div class="score-details">
+          <div class="score-item">
+            <span class="score-label">Benar</span>
+            <span class="score-value correct" id="correct-count">0</span>
+          </div>
+          <div class="score-item">
+            <span class="score-label">Salah</span>
+            <span class="score-value wrong" id="wrong-count">0</span>
+          </div>
+          <div class="score-item">
+            <span class="score-label">Kosong</span>
+            <span class="score-value empty" id="empty-count">0</span>
+          </div>
+          <div class="score-item" id="essay-count-item" style="display: none;">
+            <span class="score-label">Esai</span>
+            <span class="score-value" style="color: var(--warning);" id="essay-count">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="violation-summary" id="violation-summary" hidden>
+        <h3>⚠️ Riwayat Pelanggaran</h3>
+        <ul id="violation-list"></ul>
+      </div>
+
+      <button id="exit-btn" class="btn btn-primary">Keluar</button>
+    </div>
+  </div>
+
+  <div id="admin-screen" class="screen">
+    <div class="admin-container">
+      <div class="admin-header">
+        <h1>Panel Pengawas</h1>
+        <button id="admin-logout-btn" class="btn btn-secondary btn-sm">Keluar</button>
+      </div>
+      <div class="admin-tabs">
+        <button class="tab-btn active" data-tab="active-exams">Ujian Aktif</button>
+        <button class="tab-btn" data-tab="otp-requests">Permintaan OTP <span id="otp-badge" class="tab-badge hidden">0</span></button>
+        <button class="tab-btn" data-tab="results">Hasil &amp; Nilai <span id="results-badge" class="tab-badge hidden">0</span></button>
+        <button class="tab-btn" data-tab="logs">Log Keamanan</button>
+        <button class="tab-btn" data-tab="management">Kelola Data</button>
+      </div>
+
+      <div class="tab-content">
+        <div id="active-exams" class="tab-pane active">
+          <table id="exams-table">
+            <thead>
+              <tr>
+                <th>ID Peserta</th>
+                <th>Nama</th>
+                <th>Ujian</th>
+                <th>Status</th>
+                <th>Pelanggaran</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div id="otp-requests" class="tab-pane">
+          <table id="otp-table">
+            <thead>
+              <tr>
+                <th>ID Peserta</th>
+                <th>Nama</th>
+                <th>Kode OTP</th>
+                <th>Waktu</th>
+                <th>Alasan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div id="results" class="tab-pane">
+          <div class="results-toolbar">
+            <p class="muted">Klik "Periksa" untuk melihat jawaban siswa, mengoreksi esai, dan memberi nilai.</p>
+            <button id="export-csv-btn" class="btn btn-secondary btn-sm">Unduh CSV</button>
+          </div>
+          <table id="results-table">
+            <thead>
+              <tr>
+                <th>Siswa</th>
+                <th>Ujian</th>
+                <th>Dikumpulkan</th>
+                <th>PG (benar/salah/kosong)</th>
+                <th>Status Penilaian</th>
+                <th>Nilai Akhir</th>
+                <th>Keamanan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div id="logs" class="tab-pane">
+          <div id="logs-content"></div>
+        </div>
+
+        <div id="management" class="tab-pane">
+          <div class="mgmt-section">
+            <h3>👥 Kelola Peserta</h3>
+            <form id="add-student-form" class="mgmt-form">
+              <div class="form-row">
+                <input type="text" id="mgmt-student-id" placeholder="ID Peserta (contoh: 2024006)" required>
+                <input type="text" id="mgmt-student-name" placeholder="Nama Lengkap" required>
+                <input type="text" id="mgmt-student-class" placeholder="Kelas (contoh: 10A)" required>
+                <input type="email" id="mgmt-student-email" placeholder="Email (opsional)">
+              </div>
+              <button type="submit" class="btn btn-primary">Tambah Peserta</button>
+            </form>
+            <table id="students-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nama</th>
+                  <th>Kelas</th>
+                  <th>Email</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="mgmt-section">
+            <h3>📝 Kelola Soal Ujian</h3>
+            <form id="add-exam-form" class="mgmt-form">
+              <div class="form-row">
+                <input type="text" id="mgmt-exam-id" placeholder="Kode Ujian (contoh: SOS-001)" required>
+                <input type="text" id="mgmt-exam-title" placeholder="Judul Ujian" required>
+                <input type="number" id="mgmt-exam-duration" placeholder="Durasi (menit)" required min="1" max="300">
+              </div>
+              <div class="form-row">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="mgmt-shuffle-q" checked> Acak Soal
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" id="mgmt-shuffle-o" checked> Acak Opsi
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Buat Ujian Baru</button>
+            </form>
+            <table id="exams-mgmt-table">
+              <thead>
+                <tr>
+                  <th>Kode</th>
+                  <th>Judul</th>
+                  <th>Durasi</th>
+                  <th>Jumlah Soal</th>
+                  <th>Tipe Soal</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="mgmt-section">
+            <h3>➕ Tambah Soal ke Ujian</h3>
+            <form id="add-question-form" class="mgmt-form">
+              <div class="form-row">
+                <select id="mgmt-question-exam" required>
+                  <option value="">Pilih Ujian</option>
+                </select>
+                <select id="mgmt-question-type" required>
+                  <option value="multiple_choice">Pilihan Ganda</option>
+                  <option value="essay">Esai</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <textarea id="mgmt-question-text" placeholder="Teks Pertanyaan" required rows="2"></textarea>
+              </div>
+              <div id="mgmt-mc-options" class="mc-options">
+                <h4>Opsi Pilihan Ganda</h4>
+                <div class="option-inputs">
+                  <input type="text" placeholder="Opsi A" class="opt-input" data-opt="a">
+                  <input type="text" placeholder="Opsi B" class="opt-input" data-opt="b">
+                  <input type="text" placeholder="Opsi C" class="opt-input" data-opt="c">
+                  <input type="text" placeholder="Opsi D" class="opt-input" data-opt="d">
+                </div>
+                <div class="form-row">
+                  <label>Jawaban Benar:
+                    <select id="mgmt-correct-answer">
+                      <option value="a">A</option>
+                      <option value="b">B</option>
+                      <option value="c">C</option>
+                      <option value="d">D</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div id="mgmt-essay-options" class="essay-options hidden">
+                <h4>Pengaturan Esai</h4>
+                <div class="form-row">
+                  <input type="number" id="mgmt-essay-max" placeholder="Max Kata (opsional)" min="10" max="2000">
+                  <input type="number" id="mgmt-essay-min" placeholder="Min Kata (opsional)" min="0" max="1000">
+                </div>
+                <textarea id="mgmt-essay-keywords" placeholder="Kata Kunci (pisahkan dengan koma)" rows="2"></textarea>
+                <textarea id="mgmt-essay-sample" placeholder="Contoh Jawaban (untuk referensi pengawas)" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Tambah Soal</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dialog konfirmasi di dalam halaman (confirm() bawaan browser bisa memicu deteksi blur) -->
+  <div id="confirm-modal" class="modal hidden">
+    <div class="modal-box">
+      <p id="confirm-message"></p>
+      <div class="modal-actions">
+        <button type="button" id="confirm-cancel" class="btn btn-secondary">Batal</button>
+        <button type="button" id="confirm-ok" class="btn btn-primary">Ya</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jendela koreksi jawaban siswa (pengawas) -->
+  <div id="result-modal" class="modal hidden">
+    <div class="modal-box wide" id="result-modal-body"></div>
+  </div>
+
+  <div id="toast" class="toast hidden" role="status"></div>
+
+  <script src="security.js"></script>
+  <script src="otp.js"></script>
+  <script src="quiz.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
